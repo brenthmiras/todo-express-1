@@ -12,7 +12,7 @@ const createTodo = async (attrs: TodoAttrs) => {
   return todo;
 };
 
-describe('GET /api/todos', () => {
+describe('PUT /api/todos/:id', () => {
   it('should update todo', async () => {
     const todo = await createTodo({
       title: 'My Todo',
