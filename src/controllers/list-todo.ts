@@ -5,6 +5,25 @@ import { validateRequest } from '../middlewares/validate-request';
 
 const router = express.Router();
 
+/**
+ * @api {get} /api/todos Retrieve todos
+ * @apiName GetTodos
+ * @apiGroup Todo
+ *
+ * @apiParam {Number} [page=1] The current page.
+ * @apiParam {Number} [size=10] The number of items per page.
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "items": [],
+ *       "pagination": {
+ *       "page": 1,
+ *       "size": 10,
+ *       "total": 0
+ *       }
+ *     }
+ */
 router.get(
   '/api/todos',
   [

@@ -12,6 +12,10 @@ app.use(json());
  */
 app.use(listTodoRouter);
 
+if (process.env.NODE_ENV === 'development') {
+  app.use('/apidoc', express.static(__dirname + '/apidoc'));
+}
+
 app.use(errorHandler);
 
 export { app };
