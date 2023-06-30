@@ -1,9 +1,12 @@
 import express, { Request, Response } from 'express';
+import { Todo } from '../models/todo';
 
 const router = express.Router();
 
 router.get('/api/todos', async (req: Request, res: Response) => {
-  res.status(200).send('Ok');
+  const todos = await Todo.find({});
+
+  res.status(200).send(todos);
 });
 
 export { router as listTodoRouter };
