@@ -21,6 +21,18 @@ const router = express.Router();
  *         "_id": "649e517aee5fac84a812752a",
  *         "__v": 0
  *     }
+ *
+ *
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 404 Not Found
+ *     {
+ *         "errors": [
+ *             {
+ *                 "message": "Not found"
+ *             }
+ *         ]
+ *     }
  */
 router.put(
   '/api/todos/:id',
