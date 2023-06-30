@@ -1,11 +1,16 @@
 version: '3'
 services:
   todos:
-    image: brenthmiras/todo-express-1
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       - MONGO_URI=mongodb://todos-mongo-srv:27017/todos
     ports:
       - 3000:3000
+    volumes:
+      - .:/app
+      - /app/node_modules
   todos-mongo-srv:
     image: mongo
     volumes:

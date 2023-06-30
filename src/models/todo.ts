@@ -41,4 +41,4 @@ ticketSchema.statics.build = (attrs: TodoAttrs) => {
 
 const Todo = mongoose.model<TodoDoc, TodoModel>('Todo', ticketSchema);
 
-export { Todo };
+export { Todo, TodoAttrs };
